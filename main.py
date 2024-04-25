@@ -2,34 +2,38 @@
 
 def printWelcome():
     print("***********************************************")
-    print("*          Welcome to the Stardew Valley       *")
+    print("*          Welcome to the Stardew Valley      *")
     print("*            Online Store & Emporium          *")
     print("*                                             *")
-    print("*          Explore Our Bountiful Selection     *")
-    print("*            of Seeds, Tools, and More!        *")
+    print("*          Explore Our Bountiful Selection    *")
+    print("*            of Seeds, Tools, and More!       *")
     print("*                                             *")
-    print("*        Step Into a World of Farming Magic    *")
+    print("*        Step Into a World of Farming Magic   *")
     print("*                                             *")
-    print("*        Please select from the following      *")
+    print("*        Please select from the following     *")
     print("*                 options below:              *")
     print("*                                             *")
-    print("*      1. Buy Products                         *")
-    print("*      2. Admin Login                          *")
-    print("*      0. Quit                                 *")
+    print("*      1. Buy Products                        *")
+    print("*      2. Admin Login                         *")
+    print("*      0. Quit                                *")
     print("***********************************************")
 
 
 def main_menu():
+    printWelcome()
     while True:
-        usr_selection = input()
-        if (usr_selection == 0):
-            print("Good Bye")
-            break
-        elif (usr_selection == 1):
-            print("selection")
-        elif (usr_selection == 2):
-            print("selection")
-        else:
+        try:
+            usr_selection = int(input())
+            if (usr_selection == 0):
+                print("Good Bye")
+                break
+            elif (usr_selection == 1):
+                print("selection")
+            elif (usr_selection == 2):
+                print("selection")
+            else:
+                print("Invalid selection...")
+        except ValueError:
             print("Invalid selection...")
 
 
@@ -54,3 +58,6 @@ def buy_products():
     no ->  ask to quit or return to menu
     '''
 
+
+print("in main")
+main_menu()
